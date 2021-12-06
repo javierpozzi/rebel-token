@@ -57,7 +57,9 @@ contract("REBToken", async function (accounts) {
     const balance = await rebToken.balanceOf(deployerAccount);
     const amount = balance.add(new BN(1));
 
-    expect(rebToken.transfer(recipient, amount)).to.eventually.be.false;
+    await expect(rebToken.transfer(recipient, amount)).to.eventually.be.rejectedWith(
+      "transfer amount exceeds balance"
+    );
   });
 
 });
