@@ -1,4 +1,4 @@
-const REBTokenArtifact = artifacts.require("REBToken");
+const rebelTokenArtifact = artifacts.require("REBToken");
 
 const chai = require("chai");
 const BN = web3.utils.BN;
@@ -15,7 +15,7 @@ contract("REBToken", async function (accounts) {
   let rebToken;
 
   beforeEach(async function () {
-    rebToken = await REBTokenArtifact.deployed();
+    rebToken = await rebelTokenArtifact.new(tokenTotalSupply);
   });
 
   it("should have the correct initial values", async function () {
