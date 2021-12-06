@@ -2,13 +2,9 @@ require("dotenv").config({ path: "../.env" });
 
 const rebelTokenArtifact = artifacts.require("REBToken");
 
-const chai = require("chai");
-const BN = web3.utils.BN;
-const chaiBN = require("chai-bn")(BN);
-chai.use(chaiBN);
-const chaiAsPromised = require("chai-as-promised");
-chai.use(chaiAsPromised);
+const chai = require("./setupChai.js");
 const expect = chai.expect;
+const BN = web3.utils.BN;
 
 contract("REBToken", async function (accounts) {
   const [deployerAccount, recipient] = accounts;
