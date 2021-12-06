@@ -1,3 +1,5 @@
+require("dotenv").config({ path: "../.env" });
+
 const rebelTokenArtifact = artifacts.require("REBToken");
 
 const chai = require("chai");
@@ -10,7 +12,7 @@ const expect = chai.expect;
 
 contract("REBToken", async function (accounts) {
   const [deployerAccount, recipient] = accounts;
-  const tokenTotalSupply = new BN(1000000);
+  const tokenTotalSupply = new BN(process.env.INITIAL_SUPPLY);
 
   let rebToken;
 
