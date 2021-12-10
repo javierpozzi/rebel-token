@@ -20,6 +20,18 @@ module.exports = {
       },
       network_id: "5777",
     },
+    goerli_infura: {
+      provider: function () {
+        return new HDWalletProvider(process.env.MNEMONIC, process.env.GOERLI_INFURA_ENDPOINT, accountIndex);
+      },
+      network_id: "5",
+    },
+    ropsten_infura: {
+      provider: function () {
+        return new HDWalletProvider(process.env.MNEMONIC, process.env.ROPSTEN_INFURA_ENDPOINT, accountIndex);
+      },
+      network_id: "3",
+    },
   },
   compilers: {
     solc: {
