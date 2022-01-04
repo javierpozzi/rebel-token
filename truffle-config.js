@@ -20,6 +20,12 @@ module.exports = {
       },
       network_id: "5777",
     },
+    rinkeby_infura: {
+      provider: function () {
+        return new HDWalletProvider(process.env.MNEMONIC, process.env.RINKEBY_INFURA_ENDPOINT, accountIndex);
+      },
+      network_id: "4",
+    },
     goerli_infura: {
       provider: function () {
         return new HDWalletProvider(process.env.MNEMONIC, process.env.GOERLI_INFURA_ENDPOINT, accountIndex);
